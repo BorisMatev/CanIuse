@@ -86,6 +86,7 @@
             display: grid;
             grid-template-columns: 33% 33% 33%;
             gap: 10px;
+            margin-bottom: 50px;
         }
 
         .title {
@@ -106,6 +107,16 @@
 
         li:hover, .btn:hover {
             color: #ffed2b;
+        }
+        .changeBtn{
+            background-color: #00000000;
+            border: none;
+            color: whitesmoke;
+            padding: 5px 8px;
+        }
+        
+        .changeBtn:hover{
+            background-color: rgba(255, 255, 255, 0.1);
         }
     </style>
 </head>
@@ -191,11 +202,21 @@
             <h2 class="title">
                 Did you know?
             </h2>
+            <p id="paragraf" style="font-size: 19px; height: 90px;"></p>
+            <button onclick="change()" class="changeBtn">Next</button>
         </div>
         <div class="item">
             <h2 class="title">
                 Third party tools
             </h2>
+            <ul style="list-style-type:square; margin-left: 15px; font-size: 20px; margin-bottom: 30px;">
+                <li>The CanIUse Embed — Add support tables to your site</li>
+                <li>Caniuse Component — Add support tables to your presentations</li>
+                <li>Caniuse command line tool</li>
+                <li>Doiuse...? — Lint your CSS to check what features work</li>
+                <li>I want to use — Select multiple features and see what % of users can use them</li>
+            </ul>
+            <span  class="btn" style="font-size: 19px; ">See full list</span>
         </div>
         <div class="item">
             <h2 class="title">
@@ -203,6 +224,28 @@
             </h2>
         </div>
     </div>
+    <hr>
+    <footer>
+        
+    </footer>
+    <script>
+        let array = ["If a feature you're looking for is not available on the site, you can vote to have it included. Better yet, if you've done the research you can even submit it yourself!",
+                    "You can import usage data from your Google Analytics account and see exactly how well a feature is supported among your own site's visitors. Look under the Settings panel to get started!",
+                    "Usage data for all countries and continents can be imported via the Settings panel.",
+                    "By default, older browser versions are only shown if they have >= 0.5% usage share. You can increase or decrease this value from the Settings panel.",
+                    "Each feature support table includes a 'Usage relative' button. This will resize each browser version cell to be relative to the amount of support it has for the selected usage source."];
+        let p = document.getElementById('paragraf');
+        let i = 0;
+        p.innerHTML = array[i];
+        function change() {
+            if (i == 4) {
+                i = 0;
+            } else {
+                i++;
+            }
+            p.innerHTML = array[i];
+        }
+    </script>
 </body>
 
 </html>
