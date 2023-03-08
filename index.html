@@ -6,7 +6,108 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: whitesmoke;
+        }
+
+        body {
+            background-image: url("Assets/background.png");
+            margin: 0px 80px 0px 80px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .headerBtn {
+            padding: 10px 20px 10px 20px;
+            font-size: 25px;
+            border: none;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: whitesmoke;
+            margin-bottom: 20px;
+        }
+
+        .headerBtn:hover {
+            background-color: #ad6500;
+        }
+
+        .link:hover {
+            color: #ad6500;
+        }
+
+        .serchBar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #c75000;
+            padding: 30px;
+            /* width: 100px; */
+            margin-bottom: 20px;
+        }
+
+        input {
+            background-color: #c75000;
+            margin: 0px 10px 0px 10px;
+            border: none;
+            width: 40%;
+            height: 40px;
+            border-bottom: 1px solid wheat;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        input:focus {
+            background-color: #d6976d;
+            outline: none;
+        }
+
+        .filterBtn {
+            font-size: 25px;
+            border: none;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: whitesmoke;
+            padding: 10px;
+            text-align: start;
+        }
+
+        .filterBtn:hover {
+            background-color: #ad6500;
+        }
+
+        .main {
+            display: grid;
+            grid-template-columns: 33% 33% 33%;
+            gap: 10px;
+        }
+
+        .title {
+            border-bottom: 1px solid whitesmoke;
+            display: inline-block;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        li, .btn {
+            margin-bottom: 10px;
+            color: #eb8900;
+        }
+
+        li::marker {
+            color: #caa185;
+        }
+
+        li:hover, .btn:hover {
+            color: #ffed2b;
+        }
+    </style>
 </head>
 
 <body>
@@ -15,16 +116,93 @@
             <button class="headerBtn">Home</button>
             <button class="headerBtn">News</button>
         </div>
-        <div>February 25, 2023 - New feature: CSS Container Style Queries</div>
+        <div style=" color: #534c3d; font-size: 20px;">
+            <a href="" style="text-decoration: none; color: #534c3d;">February 25, 2023 - <span class="link">New
+                    feature: CSS Container Style Queries</span></a>
+        </div>
         <div>
             <button class="headerBtn">Compare browsers</button>
             <button class="headerBtn">About</button>
         </div>
     </div>
     <div class="serchBar">
-
+        <h1>Can I use</h1>
+        <input type="text">
+        <h1>?</h1>
+        <h2 style="margin-left: 20px;">
+            Stttings
+        </h2>
     </div>
-    
+    <div class="filter" style="margin-bottom: 30px;">
+        <button class="filterBtn" style="width: 80%;">
+            Index of features
+        </button>
+        <button class="filterBtn" style="width: 19%;">
+            Filter features
+        </button>
+    </div>
+
+    <div class="main">
+        <div class="item">
+            <h2 class="title">
+                Latest features
+            </h2>
+            <ul style="list-style-type:square; margin-left: 15px; font-size: 20px;">
+                <li>CSS Container Style Queries</li>
+                <li>ImageCapture API</li>
+                <li>WebCodecs API</li>
+                <li>WebTransport</li>
+                <li>Media Queries: Range Syntax</li>
+            </ul>
+        </div>
+        <div class="item">
+            <h2 class="title">
+                Most searched features
+            </h2>
+            <ol style="margin-left: 15px; font-size: 20px;">
+                <li>CSS Grid</li>
+                <li>Flexbox</li>
+                <li>WebP image format</li>
+                <li>gap property for Flexbox</li>
+                <li>ES6</li>
+            </ol>
+        </div>
+        <div class="item">
+            <h2 class="title">
+                Test a feature
+            </h2>
+            <p style="font-size: 19px;">Our partnership with <span class="btn">BrowserStack</span> now lets you test your website for
+                compatibility across 2,000+ real browsers and devices.
+                <br><br>
+                Test on:
+            </p>
+            <div style="display: flex;">
+                <ul style="list-style-type:square; margin-left: 15px; font-size: 20px;">
+                    <li>IE 11</li>
+                    <li>Safari 13</li>
+                </ul>
+                <ul style="list-style-type:square; margin-left: 50px; font-size: 20px;">
+                    <li>Safari on iPhone 11 Pro</li>
+                    <li>Chrome on Galaxy S20</li>
+                </ul>
+            </div>
+        </div>
+        <div class="item">
+            <h2 class="title">
+                Did you know?
+            </h2>
+        </div>
+        <div class="item">
+            <h2 class="title">
+                Third party tools
+            </h2>
+        </div>
+        <div class="item">
+            <h2 class="title">
+                Browser scores
+            </h2>
+        </div>
+    </div>
 </body>
 
 </html>
