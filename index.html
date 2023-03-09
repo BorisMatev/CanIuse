@@ -6,119 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
-    <style>
-        * {
-            margin: 0px;
-            padding: 0px;
-            font-family: Arial, Helvetica, sans-serif;
-            color: whitesmoke;
-        }
-
-        body {
-            background-image: url("Assets/background.png");
-            margin: 0px 80px 0px 80px;
-        }
-
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .headerBtn {
-            padding: 10px 20px 10px 20px;
-            font-size: 25px;
-            border: none;
-            background-color: rgba(255, 255, 255, 0.1);
-            color: whitesmoke;
-            margin-bottom: 20px;
-        }
-
-        .headerBtn:hover {
-            background-color: #ad6500;
-        }
-
-        .link:hover {
-            color: #ad6500;
-        }
-
-        .serchBar {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #c75000;
-            padding: 30px;
-            /* width: 100px; */
-            margin-bottom: 20px;
-        }
-
-        input {
-            background-color: #c75000;
-            margin: 0px 10px 0px 10px;
-            border: none;
-            width: 40%;
-            height: 40px;
-            border-bottom: 1px solid wheat;
-            font-size: 30px;
-            text-align: center;
-        }
-
-        input:focus {
-            background-color: #d6976d;
-            outline: none;
-        }
-
-        .filterBtn {
-            font-size: 25px;
-            border: none;
-            background-color: rgba(255, 255, 255, 0.1);
-            color: whitesmoke;
-            padding: 10px;
-            text-align: start;
-        }
-
-        .filterBtn:hover {
-            background-color: #ad6500;
-        }
-
-        .main {
-            display: grid;
-            grid-template-columns: 33% 33% 33%;
-            gap: 10px;
-            margin-bottom: 50px;
-        }
-
-        .title {
-            border-bottom: 1px solid whitesmoke;
-            display: inline-block;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-        }
-
-        li, .btn {
-            margin-bottom: 10px;
-            color: #eb8900;
-        }
-
-        li::marker {
-            color: #caa185;
-        }
-
-        li:hover, .btn:hover {
-            color: #ffed2b;
-        }
-        .changeBtn{
-            background-color: #00000000;
-            border: none;
-            color: whitesmoke;
-            padding: 5px 8px;
-        }
-        
-        .changeBtn:hover{
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -136,6 +24,7 @@
             <button class="headerBtn">About</button>
         </div>
     </div>
+
     <div class="serchBar">
         <h1>Can I use</h1>
         <input type="text">
@@ -144,6 +33,7 @@
             Stttings
         </h2>
     </div>
+
     <div class="filter" style="margin-bottom: 30px;">
         <button class="filterBtn" style="width: 80%;">
             Index of features
@@ -166,6 +56,7 @@
                 <li>Media Queries: Range Syntax</li>
             </ul>
         </div>
+
         <div class="item">
             <h2 class="title">
                 Most searched features
@@ -182,7 +73,8 @@
             <h2 class="title">
                 Test a feature
             </h2>
-            <p style="font-size: 19px;">Our partnership with <span class="btn">BrowserStack</span> now lets you test your website for
+            <p style="font-size: 19px;">Our partnership with <span class="btn">BrowserStack</span> now lets you test
+                your website for
                 compatibility across 2,000+ real browsers and devices.
                 <br><br>
                 Test on:
@@ -216,26 +108,56 @@
                 <li>Doiuse...? — Lint your CSS to check what features work</li>
                 <li>I want to use — Select multiple features and see what % of users can use them</li>
             </ul>
-            <span  class="btn" style="font-size: 19px; ">See full list</span>
+            <span class="btn" style="font-size: 19px; ">See full list</span>
         </div>
         <div class="item">
             <h2 class="title">
                 Browser scores
             </h2>
+            <div style="margin-bottom: 30px;">
+                <button class="browseBtn1" id="browseBtn1" onclick="btn1Clicked()">Current version</button>
+                <button class="browseBtn2" id="browseBtn2" onclick="btn2Clicked()">Dev version</button>
+            </div>
+            <div style="display: flex;">
+                <div class="browseScore1 score" id="score1">
+                    Chrome 110: 405
+                </div>
+                <div class="scoreShadow1"></div>
+            </div>
+            <div style="display: flex;">
+                <div class="browseScore2 score" id="score2">
+                    Firefox 110: 385
+                </div>
+                <div class="scoreShadow2"></div>
+            </div>
+            <div style="display: flex;">
+                <div class="browseScore3 score" id="score3">
+                    Safari 16.3: 375
+                </div>
+                <div class="scoreShadow3"></div>
+            </div>
         </div>
     </div>
     <hr>
     <footer>
-        
+
     </footer>
     <script>
         let array = ["If a feature you're looking for is not available on the site, you can vote to have it included. Better yet, if you've done the research you can even submit it yourself!",
-                    "You can import usage data from your Google Analytics account and see exactly how well a feature is supported among your own site's visitors. Look under the Settings panel to get started!",
-                    "Usage data for all countries and continents can be imported via the Settings panel.",
-                    "By default, older browser versions are only shown if they have >= 0.5% usage share. You can increase or decrease this value from the Settings panel.",
-                    "Each feature support table includes a 'Usage relative' button. This will resize each browser version cell to be relative to the amount of support it has for the selected usage source."];
+            "You can import usage data from your Google Analytics account and see exactly how well a feature is supported among your own site's visitors. Look under the Settings panel to get started!",
+            "Usage data for all countries and continents can be imported via the Settings panel.",
+            "By default, older browser versions are only shown if they have >= 0.5% usage share. You can increase or decrease this value from the Settings panel.",
+            "Each feature support table includes a 'Usage relative' button. This will resize each browser version cell to be relative to the amount of support it has for the selected usage source."
+        ];
         let p = document.getElementById('paragraf');
         let i = 0;
+
+        let btn1 = document.getElementById('browseBtn1');
+        let btn2 = document.getElementById('browseBtn2');
+        let s1 = document.getElementById('score1');
+        let s2 = document.getElementById('score2');
+        let s3 = document.getElementById('score3')
+
         p.innerHTML = array[i];
         function change() {
             if (i == 4) {
@@ -244,6 +166,26 @@
                 i++;
             }
             p.innerHTML = array[i];
+        }
+
+        function btn1Clicked() {
+            btn1.className = "browseBtn1";
+            btn2.className = "browseBtn2";
+            s1.className = "browseScore1 score";
+            s3.className = "browseScore3 score";
+            s1.innerHTML = "Chrome 110: 405";
+            s2.innerHTML = "Firefox 110: 385";
+            s3.innerHTML = "Safari 16.3: 375";
+        }
+
+        function btn2Clicked() {
+            btn1.className = "browseBtn2";
+            btn2.className = "browseBtn1";
+            s1.className = "browseScore12 score";
+            s3.className = "browseScore32 score";
+            s1.innerHTML = "Chrome 113: 410";
+            s2.innerHTML = "Firefox 112: 385";
+            s3.innerHTML = "Safari TP: 386";
         }
     </script>
 </body>
