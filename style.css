@@ -181,3 +181,16 @@ li:hover,
     height: 28.5px;
     width: 6%;
 }
+
+footer{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    display: grid;
+    grid-template-columns: 40% 20% 20% 20%;
+}
+
+p{
+    font-size: 15px;
+    margin: 20px 0px;
+    color:#d6976d;
+}
